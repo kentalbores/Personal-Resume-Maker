@@ -1,0 +1,215 @@
+### *Personal Data*
+
+#full_name: Kent B. Albores
+#email: kentalbores143@gmail.com
+#personal_website: https://kentalbores.xyz
+#linked_in: https://www.linkedin.com/in/kent-albores-145b752b4/
+#phone_num: 09616634280
+#birth_date: 2004-06-02
+#github: https://github.com/kentalbores
+#address: Alambijud, Argao, Cebu
+
+
+#### *N-Compass TV ( June 2025 - Present )*
+
+```
+-# The First week, I was assigned to design UI/UX of pages for a company internal tool which was the Inventory System using Figma. Then after that, I was assigned to develop the part of the system that I designed. The tech stack was: 
+	[ NextJS, Express, MySQL (Prisma) ]
+
+Skills I Learned:
+	- Work with other developers
+	- Learned Hands on Git
+	- git rebase, merge, pull requests, merge conflicts, code reviews
+	- corporate level coding standards || project flow || commit messages etc.
+	- Agile Methodology
+	- Daily Scrum
+	- Role Based Access Control
+	- Database Design
+
+__________________________________________________________________________________
+
+-# After a while, I was assigned to cybersecurity department. First I was tasked to study and research about cybersecurity basics and tools. Then I we were tasked to do some penetration testing and vulnerability scanning for the company's official website.
+
+Skills I learned:
+	- Basics of Networking
+	  * TCP 3-Way Handshake
+	- Used Kali Linux
+	- Used Kali tools
+	  * nmap
+	  * masscan
+	  * etc.
+	  * burpsuite
+	- Basic Attacks
+	  * Denial of Service attacks
+	  * Man-in-the-Middle attacks
+	  * Brute Forcing
+	  * XSS attack
+	- Web scraping and mass crawling
+
+Identified a **Broken Access Control** vulnerability by intercepting and analyzing API endpoints using Burp Suite. By manipulating request payloads, I successfully demonstrated a **Horizontal/Vertical Privilege Escalation** that allowed the creation of administrative accounts from an unprivileged session.
+
+__________________________________________________________________________________
+
+-# n8n
+I was assigned to research and study this workflow automation tool called n8n. Created a lot of workflows for fun.
+
+Workflows:
+
+	- Clockify Automation
+	  * Automates the attendance logging (Slack API) for Interns and allowance computation.
+	    
+	- Daily Reports
+	  * Allows employees from each department to submit daily reports to a web app I made and then it gets stored in a DB, then an AI agent will analyze the reports daily. In the web application, an admin or the project manager can see all reports and the AI analysis. The AI analysis will give the current status (a rough estimate of the current project based on the reports), give summary for each department, mention blockers and issues, and suggest solutions.
+	     
+	- Github Automation
+	  * Usage of slack api and elevenlabs (audio ai generation) so that when someone pushes onto a repo, it announces it to the whole office.
+	    
+	- Newsletter
+	  * Scrapes known tech news websites and usage of google serpapi and even created a python script with playwright that runs daily to search for new and interesting tools especially AI. The AI agent analyzes the scraped tools and then rates it and decides if it is worth the look. If it passes, it gets saved into the database and then scrape for more details about that tool. Once I have all the information, I get to collab with the Graphics Design Department researching about Synthesia AI that generates an AI video of a person saying the script that we give it to. So I my workflow will generate a script daily based on the scraped tools and it gets sent to Synthesia AI automatically and then played into one of the TVs inside the office, like a news report for new tools that plays every morning.
+	    
+	- Events Scraper
+	  * Much like the newsletter but for events. although this one doesn't get to be passed on to the synthesiaAI
+	
+	- Quality of Life Workflows
+	  * Created a lot of workflows that sorts different kinds of messy data in sheets
+	  * Identifier of a flattened pdf and unflattened pdf
+	  * Identifier of a png with transparent background and a fake png
+	  * PDF tools
+	  * Scraper for contents of a google sheets
+	    
+	- Presenton
+	  * Presenton is an AI presentation maker using just natural language and can upload your own data or files using templates. There were limited amount of templates, and they are in react so i analyzed the source code and then i used n8n to create and integrate it so that it becomes dynamic, it allows for dynamic presentation layouts and themes depending on how you describe it to and the AI will also decide if it should use the prebuilt templates or create its own.
+	     
+	- Flyers
+	  * Helped with a very huge workflow of a major service of the company, it is an extraction of flyers to posters. A client will give a flyer and the workflow's job is to extract the data so it is easier for the departments assigned to it to plot and design the poster. I contributed with the logs for errors and notifications sent to slack. I also contributed to creation of a specific workflow for a specific store that has different format of flyers. It uses AI image recognition and prompt engineering to actually get the data accurately since sometimes a store will send a pdf, an image, just an image directly taken from a phone.    
+
+__________________________________________________________________________________
+
+-# Raspberry PI 5
+	* I was tasked migrate a project that was built for pi4 to pi5.
+	  Learned:
+		  - services
+		  - rasbian OS commands and architecture
+		  - ssh
+		  - anydesk
+		  - linux architecture and file system
+	* I was then tasked for a failsafe system wherein if the main drive gets corrupted or can't boot, it boots to a backup flash drive attached to the pi and boots to it, it then repairs the main drive and then boots to it. However if the main drive is no longer really available like if it was removed, it becomes the main drive where it plays the service and application that the main drive is supposed to do. Even if I rm -rf the main drive, the repair drive repairs it and even automatically sets up the application so that when it boots back to the main drive it would seem normal.
+	* I was assigned to integrate an AI Agent into the pi (zeroclaw)
+
+__________________________________________________________________________________
+
+-# N-CompassTV Clocker [ Chronos ]
+	* Assigned to a new team to develop chronos, an internal tool that helps the employees time-in easily by tapping an rfid and for admins to track employees activity and more, this is mainly for HR. 
+	  Tools I got to use:
+		  Angular ( frontend )
+		  FastAPI ( backend )
+		  N8N ( automation )
+		  Docker ( containerization )
+		  AWS EC2 ( n8n Deployment )
+		  Auth0 ( Authorization )
+		  Supabase ( database )
+		  Google Cloud Console
+		  Pi5 with RFID Scanner
+		  Figma
+		  HuggingFace ( backend deployment )
+		  Render ( frontend deployment )
+		  Jira
+		  OpenSearch ( database for logs and heavy data )
+		  FileStack
+	
+	* First our team planned out the system architecture and also carefully designed the database. Did weekly meetings ( Agile Methodology ) along with the HR department and adapting their requests and suggestions. First and main feature of chronos was for attendance. We will then implement a daily report feature in the future sprints. It is a full management system that tracks the employees data, intern details, employee performance based on attendance and time-in, absences and leaves. It is where the employees will submit leave requests or work from home requests. I mainly am responsible for backend ( first 3 sprints the backend was fully me) and deployment ( to aws, render, and huggingface ), although I also get to interact and try every other aspects like frontend etc. every now and then. 
+__________________________________________________________________________________
+
+
+Extra Learnings Along The Way:
+	Dockerhub
+	Self-Hosting
+	Cloud Computing Utilization
+	AWS
+	CloudFlare
+	Cron
+	Websockets
+	Webhooks
+	NGinx
+	Tailscale
+	Self-Hosting LLMs
+```
+
+
+
+#### *Personal Projects*
+	* Turned my own spare thinkpad into an ubuntu server which is used to host most of my projects
+	* Personal portfolio website (https://kentalbores.xyz)
+	* Personal n8n (https://n8n.kentalbores.xyz)
+	* E-commerce website for the Aming Homemade Torta (family's business)
+	* Telegram bot to track my expenses
+	* Dynamic Personal Resume Builder
+		- Made with js, it automates the creation and plotting of my personal data using a dynamic html template depending on the job role you are trying to apply to using the personal data I fed it to. 
+	* Self-hosting a vareity of open-source projects
+	* Automatic ID layout ready for print
+		- We have a printing services at home and everytime we need to print a 1x1 or 2x2 id, we have to manually remove the background in photoshop and then lay it out on a microsoft word document for print. So I created a python that does all of that automatically.
+	* Automatic Minecraft Miner
+		- Usage of java awt Robot and jnative hook for different kinds of scripts with UI. it has a bunch of features like autoclicker, auto miner that even turns by itself, auto fish.
+	* Flappy Bird game made in godot
+	* Rougelike shooter game made in unity
+	* Measures of Central Tendency Calculator
+	* Pokemon Website that uses pokemon api to get all kinds of pokemon details
+
+
+
+#### *Family Business*
+
+	SKILLS:
+		* Dealing with people/customers
+		* Photoshop
+		* Video Editing
+		* Local Networking
+		* Communication Skills
+		* Basic Computer Repairs
+
+###### Aming Homemade Torta ( 2019 - Present )
+
+	I was in-charge as the salesperson for our own products in our store ( since senior high school until college since i have to go to city to go to college, sometimes I go home every weekend and do these things still )
+
+###### Internet Cafe + Printing Services ( Elementary - Present )
+
+	I am responsible for looking out for our computer shop, whether there are any technical issues or problems, and also responsible for printing services (ids', documents, photo cards) and other microservices or customer requests like logo design, photo editing and image manipulation using photoshop, video downloads, or game/application downloads. ( since elementary until college since i have to go to city to go to college, sometimes I go home every weekend and do these things still)
+
+
+
+#### *Education*
+
+#### *4th year (2025 - 2026)*
+capstone - signifi
+eldroid  +[certification]
+php
+#### *3rd year (2024 - 2025)*
+hackathon - hackestate Filipino Homes +[certification]
+hackathon - ict congress +[certification]
+event manager
+#### *2nd year (2024 - 2025)*
+Unity space shooter game 
+Java Castle TD game
+#### *1st year (2024 - 2025)*
+Pokemon (C-programming) text based adventure game
+
+
+
+
+
+## *Education*
+##### Elementary 
+	Alambijud Elementary School
+	Nursery - Grade 6 
+##### Junior High School
+	Colawin National High School
+	Constant with Honors
+	Constant Competition School Participant ( Math - English - Science etc.)
+##### Senior High School
+	Argao National High School
+	STEM Strand
+	Graduated With Honors
+
+
+
+*ps. don't use deprecated info for resume like elementary achievements, i don't think they impact too much on resume*

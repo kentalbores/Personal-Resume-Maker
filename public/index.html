@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NLP Resume Builder</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══ SIDEBAR ═══ -->
+  <aside class="sidebar">
+
+    <div class="brand">
+      <div class="brand-icon">📄</div>
+      <div>
+        <div class="brand-title">Resume Builder</div>
+        <div class="brand-sub">NLP-Powered · Kent Albores</div>
+      </div>
+    </div>
+
+    <div class="form-card">
+
+      <!-- Photo + Role row -->
+      <div class="photo-role-row">
+
+        <!-- Photo upload -->
+        <div class="photo-upload-wrap" id="photoUploadWrap">
+          <label class="photo-placeholder" id="photoPlaceholder" for="photoInput" title="Upload profile photo">
+            <span class="photo-icon">👤</span>
+            <span class="photo-hint">Photo</span>
+          </label>
+          <div class="photo-preview" id="photoPreview" style="display:none">
+            <img id="photoPreviewImg" src="" alt="Profile" />
+            <button class="photo-remove" id="photoRemove" title="Remove photo">×</button>
+          </div>
+          <input type="file" id="photoInput" accept="image/*" style="display:none" />
+        </div>
+
+        <!-- Role input -->
+        <div class="role-input-col">
+          <label class="input-label" for="jobRole">
+            Target Job Role
+            <span class="input-hint">Leave empty for a general resume</span>
+          </label>
+          <input
+            id="jobRole"
+            class="text-input"
+            type="text"
+            placeholder="e.g. Software Developer…"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+
+      </div>
+
+      <!-- Quick presets -->
+      <div class="presets">
+        <span class="presets-label">Quick fill:</span>
+        <button class="preset-btn" data-role="Software Developer">Software Dev</button>
+        <button class="preset-btn" data-role="Fullstack Developer">Fullstack</button>
+        <button class="preset-btn" data-role="Frontend Developer">Frontend</button>
+        <button class="preset-btn" data-role="Backend Developer">Backend</button>
+        <button class="preset-btn" data-role="Cybersecurity">Cybersecurity</button>
+        <button class="preset-btn" data-role="DevOps Engineer">DevOps</button>
+        <button class="preset-btn" data-role="Automation Engineer">Automation</button>
+        <button class="preset-btn" data-role="">General</button>
+      </div>
+
+      <button id="generateBtn" class="btn btn-primary">
+        <span class="btn-icon">⚡</span>
+        Generate Resume
+      </button>
+    </div>
+
+    <!-- NLP Score Panel -->
+    <div class="score-panel" id="scorePanel" style="display:none">
+      <div class="score-panel-title">NLP Relevance Scores</div>
+      <div class="score-panel-sub">How the engine ranked each block</div>
+      <div id="scoreList" class="score-list"></div>
+    </div>
+
+    <!-- Export -->
+    <div class="export-section" id="exportSection" style="display:none">
+      <button id="exportBtn" class="btn btn-export">
+        <span class="btn-icon">⬇</span>
+        Export PDF  <span class="pdf-size">8.5 × 13 in</span>
+      </button>
+    </div>
+
+    <div class="sidebar-footer">
+      Built with Node.js · <code>natural</code> (TF-IDF) · Puppeteer
+    </div>
+
+  </aside>
+
+  <!-- ═══ PREVIEW PANE ═══ -->
+  <main class="preview-pane">
+
+    <div class="preview-toolbar">
+      <span class="preview-label" id="previewLabel">Preview</span>
+      <span class="edit-hint" id="editHint" style="display:none">✏ Click any text to edit</span>
+      <div class="toolbar-right">
+        <button class="scale-btn" id="zoomOut" title="Zoom out">−</button>
+        <span class="scale-value" id="scaleValue">100%</span>
+        <button class="scale-btn" id="zoomIn" title="Zoom in">+</button>
+        <button class="scale-btn" id="zoomReset" title="Reset zoom">⟳</button>
+      </div>
+    </div>
+
+    <div class="preview-scroll" id="previewScroll">
+
+      <!-- Empty state -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">📄</div>
+        <div class="empty-title">Your resume preview will appear here</div>
+        <div class="empty-sub">
+          Type a job role on the left (or leave it empty for a general resume),
+          then click <strong>Generate Resume</strong>.
+        </div>
+      </div>
+
+      <!-- Loading state -->
+      <div class="loading-state" id="loadingState" style="display:none">
+        <div class="spinner"></div>
+        <div class="loading-text">Analyzing &amp; curating…</div>
+      </div>
+
+      <!-- Resume iframe -->
+      <div class="resume-wrapper" id="resumeWrapper" style="display:none">
+        <iframe id="resumeFrame" class="resume-frame" title="Resume Preview"></iframe>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

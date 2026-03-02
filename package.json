@@ -1,0 +1,19 @@
+{
+  "name": "nlp-resume-builder",
+  "version": "1.0.0",
+  "description": "NLP-powered resume builder using kent_data.txt as the data source",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "natural": "^6.10.4",
+    "puppeteer": "^24.15.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
