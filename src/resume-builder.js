@@ -55,48 +55,67 @@ function buildSkillsForRole(jobRole) {
 
   if (r.includes('cybersecurity') || r.includes('security') || r.includes('infosec')) {
     return [
-      { label: 'Security Tools', items: ['Kali Linux', 'Burp Suite', 'nmap', 'masscan', 'Web Crawlers'] },
-      { label: 'Networking', items: ['TCP/IP', 'HTTP/S Protocols', 'DNS', 'Port Scanning', 'Traffic Analysis'] },
-      { label: 'Attack Vectors', items: ['XSS', 'DoS', 'MITM', 'Brute Force', 'Privilege Escalation', 'Broken Access Control'] },
-      { label: 'Other Technical', items: [...s.backend.slice(0, 3), ...s.devops.slice(0, 3)] },
+      { label: 'Sec Tools',  items: ['Kali Linux', 'Burp Suite', 'nmap', 'masscan'] },
+      { label: 'Networking', items: ['TCP/IP', 'HTTP/S', 'Port Scanning', 'Traffic Analysis'] },
+      { label: 'Attack Vectors', items: ['XSS', 'DoS', 'MITM', 'Brute Force', 'Priv. Escalation', 'BAC'] },
+      { label: 'Backend',    items: s.backend.slice(0, 4) },
+      { label: 'DevOps',     items: s.devops.slice(0, 4) },
+      { label: 'Practices',  items: s.practices },
     ];
   }
 
-  if (r.includes('devops') || r.includes('cloud') || r.includes('infrastructure')) {
+  if (r.includes('devops') || r.includes('cloud') || r.includes('infrastructure') || r.includes('embedded')) {
     return [
-      { label: 'DevOps & Cloud', items: s.devops },
-      { label: 'Backend', items: s.backend },
-      { label: 'Database', items: s.database },
-      { label: 'Tools', items: s.tools },
+      { label: 'DevOps',    items: s.devops },
+      { label: 'Backend',   items: s.backend },
+      { label: 'Database',  items: s.database },
+      { label: 'Tools',     items: s.tools },
+      { label: 'Frontend',  items: s.frontend.slice(0, 4) },
+      { label: 'Practices', items: s.practices },
     ];
   }
 
   if (r.includes('frontend') && !r.includes('backend')) {
     return [
-      { label: 'Frontend', items: s.frontend },
-      { label: 'Tools & Design', items: ['Figma', 'Git', 'Jira', 'Vite', 'npm'] },
-      { label: 'Backend (Familiar)', items: s.backend.slice(0, 4) },
-      { label: 'Other', items: s.other },
+      { label: 'Frontend',  items: s.frontend },
+      { label: 'Tools',     items: s.tools },
+      { label: 'Backend',   items: s.backend.slice(0, 4) },
+      { label: 'Database',  items: s.database.slice(0, 3) },
+      { label: 'DevOps',    items: s.devops.slice(0, 4) },
+      { label: 'Practices', items: s.practices },
     ];
   }
 
   if (r.includes('backend') && !r.includes('frontend')) {
     return [
-      { label: 'Backend', items: s.backend },
-      { label: 'Database', items: s.database },
-      { label: 'DevOps & Deployment', items: s.devops },
-      { label: 'Tools', items: s.tools },
+      { label: 'Backend',   items: s.backend },
+      { label: 'Database',  items: s.database },
+      { label: 'DevOps',    items: s.devops },
+      { label: 'Tools',     items: s.tools },
+      { label: 'Frontend',  items: s.frontend.slice(0, 4) },
+      { label: 'Practices', items: s.practices },
     ];
   }
 
-  // Default / fullstack / general
+  if (r.includes('automation') || r.includes('n8n')) {
+    return [
+      { label: 'Automation', items: ['n8n', 'Webhooks', 'Slack API', 'Python', 'Playwright', 'Bash'] },
+      { label: 'AI / APIs',  items: ['ElevenLabs', 'Synthesia AI', 'Google SerpAPI', 'OpenAI', 'Prompt Engineering'] },
+      { label: 'Backend',    items: s.backend },
+      { label: 'Database',   items: s.database.slice(0, 4) },
+      { label: 'DevOps',     items: s.devops.slice(0, 5) },
+      { label: 'Practices',  items: s.practices },
+    ];
+  }
+
+  // Default / fullstack / general — deduplicated, no redundant REST API or Webhooks
   return [
-    { label: 'Frontend', items: s.frontend },
-    { label: 'Backend',  items: s.backend },
-    { label: 'Database', items: s.database },
-    { label: 'DevOps',   items: s.devops.slice(0, 6) },
-    { label: 'Tools',    items: s.tools },
-    { label: 'Other',    items: s.other.slice(0, 5) },
+    { label: 'Frontend',  items: s.frontend },
+    { label: 'Backend',   items: s.backend },
+    { label: 'Database',  items: s.database },
+    { label: 'DevOps',    items: s.devops },
+    { label: 'Tools',     items: s.tools },
+    { label: 'Practices', items: s.practices },
   ];
 }
 

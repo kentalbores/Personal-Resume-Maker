@@ -129,6 +129,31 @@ const data = {
 
   projects: [
     {
+      id: 'chronos',
+      category: 'enterprise',
+      prestige: 3,
+      name: 'Chronos — RFID Employee Attendance System',
+      description:
+        'Led backend development for an enterprise HR platform with RFID time-in, leave management, and performance tracking. Architected the system and deployed across AWS EC2, Render, and HuggingFace.',
+      skills: ['FastAPI', 'Angular', 'Docker', 'AWS EC2', 'Auth0', 'Supabase', 'OpenSearch'],
+      tags: [
+        'backend', 'fullstack', 'enterprise', 'devops', 'cloud', 'fastapi',
+        'angular', 'aws', 'software developer', 'api', 'database', 'authentication',
+      ],
+      link: null,
+    },
+    {
+      id: 'raspi-failsafe',
+      category: 'infrastructure',
+      prestige: 3,
+      name: 'Raspberry Pi Self-Healing Boot System',
+      description:
+        'Engineered a failsafe for Pi 5: auto-detects drive corruption, boots from a backup flash drive, repairs the main OS, and restores the full application — surviving even a forced rm -rf.',
+      skills: ['Raspberry Pi', 'Linux', 'Bash', 'systemd', 'Embedded Systems'],
+      tags: ['linux', 'embedded', 'infrastructure', 'raspberry pi', 'devops', 'systems', 'sysadmin'],
+      link: null,
+    },
+    {
       id: 'ubuntu-server',
       category: 'infrastructure',
       prestige: 3,
@@ -236,12 +261,12 @@ const data = {
   ],
 
   skills: {
-    frontend: ['React', 'NextJS', 'Angular', 'HTML5', 'CSS3', 'JavaScript (ES6+)', 'TypeScript', 'Figma'],
-    backend: ['Node.js', 'Express', 'FastAPI', 'Python', 'PHP', 'Java'],
-    database: ['MySQL', 'Prisma ORM', 'Supabase', 'PostgreSQL', 'OpenSearch'],
-    devops: ['Docker', 'AWS EC2', 'Nginx', 'Linux', 'SSH', 'Cloudflare', 'Tailscale', 'HuggingFace', 'Render'],
-    tools: ['Git', 'n8n', 'Auth0', 'Jira', 'Slack API', 'Google Cloud Console', 'FileStack'],
-    other: ['REST API', 'Websockets', 'Webhooks', 'Agile / Scrum', 'RBAC', 'Penetration Testing', 'Prompt Engineering'],
+    frontend:  ['React', 'NextJS', 'Angular', 'HTML5', 'CSS3', 'JavaScript (ES6+)', 'TypeScript', 'Figma'],
+    backend:   ['Node.js', 'Express', 'FastAPI', 'Python', 'PHP', 'Java'],
+    database:  ['MySQL', 'Prisma ORM', 'Supabase', 'PostgreSQL', 'OpenSearch'],
+    devops:    ['Docker', 'AWS EC2', 'Nginx', 'Linux', 'Raspberry Pi', 'Cloudflare', 'SSH', 'Tailscale'],
+    tools:     ['Git', 'n8n', 'Auth0', 'Jira', 'Slack API', 'Google Cloud', 'Figma'],
+    practices: ['Agile / Scrum', 'RBAC', 'Penetration Testing', 'Websockets', 'Prompt Engineering'],
   },
 
   education: [
